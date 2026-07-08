@@ -7,13 +7,17 @@ public class EnemyMovement : MonoBehaviour
 
     [Header("Attributes")]
     [SerializeField] private float moveSpeed = 2f;
+    [SerializeField] private int damage = 1;
 
     //point we want to move to
     private Transform target;
     private int pathIndex = 0;
 
+    private float baseSpeed;
+
     private void Start()
     {
+        baseSpeed = moveSpeed;
         target = LevelManager.main.path[pathIndex];
     }
 
@@ -28,13 +32,15 @@ public class EnemyMovement : MonoBehaviour
             //If the enemy makes it to the end of the path, destroy the enemy; else set target's location equal to the next target on the path
             if (pathIndex == LevelManager.main.path.Length)
             {
-                EnemySpawner.onEnemyDestroy.Invoke();
+                EnemySpawner.onEnemyDestroy.Invoke(); //Call onEnemyDestroy method in Enemyspawner to destroy the enemy
+                LevelManager.main.ChangeHealth(damage); //Damage Gaia (the player)
+                //Debug.Log("PLAYER TOOK DAMAGE");
                 Destroy(gameObject);
                 return;
             }
             else
             {
-                target = LevelManager.main.path[pathIndex];
+                target = LevelManager.main.path[pathIndex]; //If they aren't at the end of the path, move to the next point
             }
         }
     }
@@ -45,5 +51,17 @@ public class EnemyMovement : MonoBehaviour
         Vector2 direction = (target.position - transform.position).normalized;
 
         rb.linearVelocity = direction * moveSpeed;
+    }
+
+    //Change the enemy's movement speed
+    public void UpdateSpeed(float newSpeed)
+    {
+        moveSpeed = newSpeed;
+    }
+
+    //Reset the enemy's movement speed
+    public void ResetSpeed()
+    {
+        moveSpeed = baseSpeed;
     }
 }

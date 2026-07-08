@@ -185,4 +185,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd3020427e9e8cd49a5ce8d0a7c97187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  hitPoints: 2
+  hitPoints: 5
+  currencyWorth: 50

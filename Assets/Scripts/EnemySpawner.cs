@@ -39,9 +39,9 @@ public class EnemySpawner : MonoBehaviour
         //If we're not spawning, nothing will run in here
         if (!isSpawning) return;
         
-        timeSinceLastSpawn += Time.deltaTime;
+        timeSinceLastSpawn += Time.deltaTime; //start the spawn timer
 
-        if(timeSinceLastSpawn >= (1f / enemiesPerSecond) && enemiesLeftToSpawn > 0)
+        if(timeSinceLastSpawn >= (1f / enemiesPerSecond) && enemiesLeftToSpawn > 0) //if the spawn timer is greater than or equal to the enemies per second spawner and there are enemies left to spawn; spawn enemies and adjust spawn values
         {         
             SpawnEnemy();
 
