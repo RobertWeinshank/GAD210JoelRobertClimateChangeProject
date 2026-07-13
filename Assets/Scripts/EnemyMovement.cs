@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.XR;
 
 public class EnemyMovement : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private Animator animator;
 
     [Header("Attributes")]
     [SerializeField] private float moveSpeed = 2f;
@@ -18,6 +20,7 @@ public class EnemyMovement : MonoBehaviour
     private void Start()
     {
         baseSpeed = moveSpeed;
+        animator = GetComponent<Animator>();
         target = LevelManager.main.path[pathIndex];
     }
 
@@ -63,5 +66,15 @@ public class EnemyMovement : MonoBehaviour
     public void ResetSpeed()
     {
         moveSpeed = baseSpeed;
+    }
+
+    public void EnemyHit()
+    {
+        animator.SetBool("isHurt", true);
+    }
+
+    public void EndHit()
+    {
+        animator.SetBool("isHurt", false);
     }
 }

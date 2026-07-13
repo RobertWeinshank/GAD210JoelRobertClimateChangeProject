@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 8603786751841442540}
   - component: {fileID: 471575530910219973}
   - component: {fileID: 3002825257287373558}
-  - component: {fileID: -3831298069893214151}
+  - component: {fileID: -7022798929604098606}
   m_Layer: 6
-  m_Name: Enemy
+  m_Name: MediumEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,7 +87,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.509434, g: 0.12255251, b: 0.25345743, a: 1}
+  m_Color: {r: 0.42863622, g: 0.020469915, b: 0.8679245, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -173,9 +173,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   rb: {fileID: 2728958541271311608}
-  animator: {fileID: -3831298069893214151}
-  moveSpeed: 2.5
-  damage: 1
+  animator: {fileID: -7022798929604098606}
+  moveSpeed: 2
+  damage: 2
 --- !u!114 &3002825257287373558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,10 +188,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd3020427e9e8cd49a5ce8d0a7c97187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  hitPoints: 3
-  currencyWorth: 50
+  hitPoints: 4
+  currencyWorth: 65
   isDestroyed: 0
---- !u!95 &-3831298069893214151
+--- !u!95 &-7022798929604098606
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -201,7 +201,7 @@ Animator:
   m_GameObject: {fileID: 3679960628853816343}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 55af7618235ea5549b1993cf6441d8c3, type: 2}
+  m_Controller: {fileID: 9100000, guid: 10df836f783300541925eb427b489c58, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

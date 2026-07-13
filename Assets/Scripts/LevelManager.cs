@@ -11,6 +11,10 @@ public class LevelManager : MonoBehaviour
 
     public int currency;
     public int health;
+    public int gaiaEnergy;
+    public int currentWave = 1;
+
+    private float energyCounter;
 
     private void Awake()
     {
@@ -21,6 +25,18 @@ public class LevelManager : MonoBehaviour
     {
         currency = 100;
         health = 100;
+        gaiaEnergy = 0;
+    }
+
+    private void Update()
+    {
+        energyCounter += Time.deltaTime;
+
+        if (energyCounter >= 3f)
+        {
+            gaiaEnergy += 1; //increases the gaiaEnergy counter by 1 every 3 seconds
+            energyCounter = 0;
+        }
     }
 
     public void IncreaseCurrency(int amount)
@@ -45,5 +61,15 @@ public class LevelManager : MonoBehaviour
     public void ChangeHealth(int amount)
     {
         health -= amount;
+    }
+
+    public void IncreaseGaiaEnergy(int amount)
+    {
+        gaiaEnergy += amount;
+    }
+
+    public void GetWave(int amount) // get reference from EnemySpawner on wave count
+    {
+        currentWave = amount;
     }
 }

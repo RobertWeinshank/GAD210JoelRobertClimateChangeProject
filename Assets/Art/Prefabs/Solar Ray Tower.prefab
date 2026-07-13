@@ -285,7 +285,7 @@ MonoBehaviour:
   firingPoint: {fileID: 6098850077482123456}
   targetingRange: 3
   rotationSpeed: 200
-  bulletsPerSecond: 2
+  damagePerSecond: 2
   raybeamDamage: 1
 --- !u!1 &4587054257240272068
 GameObject:

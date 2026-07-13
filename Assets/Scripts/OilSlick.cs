@@ -3,31 +3,26 @@ using UnityEditor;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public class TurretSlowmo : MonoBehaviour
+public class OilSlick : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private LayerMask enemyMask;
+    [SerializeField] private Transform detectionPoint;
 
     [Header("Attribute")]
     [SerializeField] private float targetingRange = 3f;
     [SerializeField] private float attackSpeed = 4f;
-    [SerializeField] private float freezeTime = 1f;
-    [SerializeField] private int damage = 1;
+    [SerializeField] private float oilTime = 1f;
+    [SerializeField] private float detectionRange = 3f;
 
     private float timeUntilFire;
 
     void Update()
     {
-        timeUntilFire += Time.deltaTime;
-
-        if (timeUntilFire >= 1f / attackSpeed)
-        {
-            FreezeEnemies();
-            timeUntilFire = 0f;
-        }
+        OilSpill();
     }
 
-    private void FreezeEnemies()
+    private void OilSpill()
     {
         RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, targetingRange, (Vector2)transform.position, 0f, enemyMask); //Takes the turret positin, range, direction (our position in vector2), distance from target, and layermask
 
@@ -37,28 +32,30 @@ public class TurretSlowmo : MonoBehaviour
             {
                 RaycastHit2D hit = hits[i];
 
-                EnemyMovement em = hit.transform.GetComponent<EnemyMovement>(); //Gets the enemy movement script of any enemy hit by the raycast
-                em.UpdateSpeed(0.5f);//Updates the speed once you get the script
-
-                EnemyHealth eh = hits[i].transform.GetComponent<EnemyHealth>(); //Damages the enemy overtime
-                eh.TakeDamage(damage);
-                Debug.Log("Enemy taking rain damage");
-
-                StartCoroutine(ResetEnemeySpeed(em)); //pass the method resetEnemySpeed
+                EnemyMovement em = hit.transform.GetComponent<EnemyMovement>(); //Gets the enemy movement script of any enemy hit by the raycast             
+                if (Vector2.Distance(transform.position, hit.transform.position) >= targetingRange)
+                { 
+                    em.UpdateSpeed(3f);//Updates the speed once you get the script   
+                }
+                else if (Vector2.Distance(transform.position, hit.transform.position) <= targetingRange)
+                {
+                    StartCoroutine(ResetEnemeySpeed(em)); //pass the method resetEnemySpeed
+                }
             }
         }
+
     }
 
     private IEnumerator ResetEnemeySpeed(EnemyMovement em)
     {
-        yield return new WaitForSeconds(freezeTime);
+        yield return new WaitForSeconds(oilTime);
 
         em.ResetSpeed();
     }
 
     private void OnDrawGizmosSelected()
     {
-        Handles.color = Color.cyan;
+        Handles.color = Color.red;
         Handles.DrawWireDisc(transform.position, transform.forward, targetingRange);
     }
 }

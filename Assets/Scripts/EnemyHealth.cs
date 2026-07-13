@@ -11,6 +11,8 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         hitPoints -= damage;
+        EnemyMovement em = transform.GetComponent<EnemyMovement>();
+        em.EnemyHit();
 
         //If the enemy's health is 0 and isn't destroyed
         if (hitPoints <= 0 && !isDestroyed)
