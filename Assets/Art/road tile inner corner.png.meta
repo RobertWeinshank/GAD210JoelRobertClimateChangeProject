@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ecfd95d1eeadb3045a1b0e90578e49f3
+guid: 0f0ee6fe382098d47ac9fdc3e39eb7e2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1689816842108683719
-    second: tile map river_0
+      213: 2137611808521350917
+    second: road tile inner corner_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -73,7 +73,7 @@ TextureImporter:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 1
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -96,28 +96,15 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tile map river_0
+      name: road tile inner corner_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1000
+        y: 500
         width: 500
         height: 500
       alignment: 0
@@ -128,80 +115,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7c54c51077f637710800000000000000
-      internalID: 1689816842108683719
+      spriteID: 50f68924d925aad10800000000000000
+      internalID: 2137611808521350917
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tile map river_1
-      rect:
-        serializedVersion: 2
-        x: 500
-        y: 1000
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9899a85e394663c419ad15a0c40c6bd4
-      internalID: -766485249
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tile map river_2
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 1000
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 976a46228362c7c40a89fd0b22cef9c3
-      internalID: -1301296473
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tile map river_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 500
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cd5a10580c4322b4fbdd4d07e379e913
-      internalID: 135360217
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tile map river_4
+      name: road tile inner corner_1
       rect:
         serializedVersion: 2
         x: 500
@@ -216,36 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df83691adbff25248a2028bbe6770f1d
-      internalID: -2017285022
+      spriteID: 5033383c8f6fb7547a0667dce82a96a8
+      internalID: -436810156
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tile map river_5
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 500
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 05918a2b77ef59843a43865e6625e1d9
-      internalID: -751795874
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tile map river_6
+      name: road tile inner corner_2
       rect:
         serializedVersion: 2
         x: 0
@@ -260,14 +159,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4411b51ab33c3f844b0488f738624d76
-      internalID: 508375752
+      spriteID: 61c1a87b523998f4c85e87831ca5313b
+      internalID: 204189462
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tile map river_7
+      name: road tile inner corner_3
       rect:
         serializedVersion: 2
         x: 500
@@ -282,30 +181,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 412b33abc0cc00e4db099b2daddf9eb8
-      internalID: -1615028597
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tile map river_8
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 0
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 930815824e358a04e921156ca130a370
-      internalID: 1205069805
+      spriteID: e18823429a3ca394db3043aab47368fd
+      internalID: -513125235
       vertices: []
       indices: 
       edges: []
@@ -314,7 +191,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 2016620a84139b941b73eb68a6685261
+    spriteID: 5326abd410c972941a63fb716ebc0056
     internalID: 0
     vertices: []
     indices: 
@@ -326,15 +203,10 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":500.0,"y":500.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      tile map river_0: 1689816842108683719
-      tile map river_1: -766485249
-      tile map river_2: -1301296473
-      tile map river_3: 135360217
-      tile map river_4: -2017285022
-      tile map river_5: -751795874
-      tile map river_6: 508375752
-      tile map river_7: -1615028597
-      tile map river_8: 1205069805
+      road tile inner corner_0: 2137611808521350917
+      road tile inner corner_1: -436810156
+      road tile inner corner_2: 204189462
+      road tile inner corner_3: -513125235
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

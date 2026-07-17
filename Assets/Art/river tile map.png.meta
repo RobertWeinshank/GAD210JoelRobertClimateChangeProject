@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ecfd95d1eeadb3045a1b0e90578e49f3
+guid: 2274501d11c05884e8677e2b689a47fd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1689816842108683719
-    second: tile map river_0
+      213: 8343099108004003388
+    second: river tile map_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -73,7 +73,7 @@ TextureImporter:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 1
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -96,24 +96,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tile map river_0
+      name: river tile map_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,14 +115,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7c54c51077f637710800000000000000
-      internalID: 1689816842108683719
+      spriteID: c3ef4726f64a8c370800000000000000
+      internalID: 8343099108004003388
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tile map river_1
+      name: river tile map_1
       rect:
         serializedVersion: 2
         x: 500
@@ -150,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9899a85e394663c419ad15a0c40c6bd4
-      internalID: -766485249
+      spriteID: 73b7261e1ebf53d4f893cb8a5f647396
+      internalID: -1731429828
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tile map river_2
+      name: river tile map_2
       rect:
         serializedVersion: 2
         x: 1000
@@ -172,14 +159,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 976a46228362c7c40a89fd0b22cef9c3
-      internalID: -1301296473
+      spriteID: fca637c1c3a14ac4fa81edf2561bc1fd
+      internalID: -2099625975
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tile map river_3
+      name: river tile map_3
       rect:
         serializedVersion: 2
         x: 0
@@ -194,14 +181,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd5a10580c4322b4fbdd4d07e379e913
-      internalID: 135360217
+      spriteID: 069a06742f0fd6b4b84deccbe567720f
+      internalID: -1916629965
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tile map river_4
+      name: river tile map_4
       rect:
         serializedVersion: 2
         x: 500
@@ -216,14 +203,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df83691adbff25248a2028bbe6770f1d
-      internalID: -2017285022
+      spriteID: 5f254ed92ffbc084da8e9dbdbe6bb84a
+      internalID: 528483177
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tile map river_5
+      name: river tile map_5
       rect:
         serializedVersion: 2
         x: 1000
@@ -238,14 +225,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05918a2b77ef59843a43865e6625e1d9
-      internalID: -751795874
+      spriteID: 4927b3e308568f447804ddaa1316bd8c
+      internalID: 239213734
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tile map river_6
+      name: river tile map_6
       rect:
         serializedVersion: 2
         x: 0
@@ -260,14 +247,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4411b51ab33c3f844b0488f738624d76
-      internalID: 508375752
+      spriteID: a4344a6e0fde1914d854e0a9b5e36301
+      internalID: 1381011584
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tile map river_7
+      name: river tile map_7
       rect:
         serializedVersion: 2
         x: 500
@@ -282,14 +269,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 412b33abc0cc00e4db099b2daddf9eb8
-      internalID: -1615028597
+      spriteID: 254041018d6b69d48a7dd24eec989882
+      internalID: 2078640308
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tile map river_8
+      name: river tile map_8
       rect:
         serializedVersion: 2
         x: 1000
@@ -304,8 +291,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 930815824e358a04e921156ca130a370
-      internalID: 1205069805
+      spriteID: 61a61cbaf54de05429aa0a4e1b37b3bb
+      internalID: 383822562
       vertices: []
       indices: 
       edges: []
@@ -314,7 +301,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 2016620a84139b941b73eb68a6685261
+    spriteID: b1d942a53631cd84c934e43958131a87
     internalID: 0
     vertices: []
     indices: 
@@ -326,15 +313,15 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":500.0,"y":500.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      tile map river_0: 1689816842108683719
-      tile map river_1: -766485249
-      tile map river_2: -1301296473
-      tile map river_3: 135360217
-      tile map river_4: -2017285022
-      tile map river_5: -751795874
-      tile map river_6: 508375752
-      tile map river_7: -1615028597
-      tile map river_8: 1205069805
+      river tile map_0: 8343099108004003388
+      river tile map_1: -1731429828
+      river tile map_2: -2099625975
+      river tile map_3: -1916629965
+      river tile map_4: 528483177
+      river tile map_5: 239213734
+      river tile map_6: 1381011584
+      river tile map_7: 2078640308
+      river tile map_8: 383822562
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
