@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.XR;
 
-public class EnemyMovement : MonoBehaviour
+public class SecondaryEnemyMovement : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Rigidbody2D rb;
@@ -12,9 +12,9 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private int damage = 1;
 
     //point we want to move to
-    private Transform target;
+    //private Transform target;
     private Transform secondaryTarget;
-    private int pathIndex = 0;
+    //private int pathIndex = 0;
     private int secondaryPathIndex = 0;
 
     private float baseSpeed;
@@ -23,22 +23,21 @@ public class EnemyMovement : MonoBehaviour
     {
         baseSpeed = moveSpeed;
         animator = GetComponent<Animator>();
-        target = LevelManager.main.path[pathIndex];
-        secondaryTarget = LevelManager.main.path[secondaryPathIndex];
+        //target = LevelManager.main.secondaryPath[secondaryPathIndex];
+        secondaryTarget = LevelManager.main.secondaryPath[secondaryPathIndex];
     }
 
     private void Update()
     {
-        //If the enemy's position is on the targeted path location, increase pathIndex 
-        if (Vector2.Distance(target.position, transform.position) <= 0.1f)
+        if (Vector2.Distance(secondaryTarget.position, transform.position) <= 0.1f)
         {
-            pathIndex++;
-            
+            secondaryPathIndex++;
+
 
             //If the enemy makes it to the end of the path, destroy the enemy; else set target's location equal to the next target on the path
-            if (pathIndex == LevelManager.main.path.Length)
+            if (secondaryPathIndex == LevelManager.main.secondaryPath.Length)
             {
-                EnemySpawner.onEnemyDestroy.Invoke(); //Call onEnemyDestroy method in Enemyspawner to destroy the enemy
+                SecondaryEnemySpawner.onSecondaryEnemyDestroy.Invoke(); //Call onEnemyDestroy method in Enemyspawner to destroy the enemy
                 LevelManager.main.ChangeHealth(damage); //Damage Gaia (the player)
                 //Debug.Log("PLAYER TOOK DAMAGE");
                 Destroy(gameObject);
@@ -46,7 +45,7 @@ public class EnemyMovement : MonoBehaviour
             }
             else
             {
-                target = LevelManager.main.path[pathIndex]; //If they aren't at the end of the path, move to the next point
+                secondaryTarget = LevelManager.main.secondaryPath[secondaryPathIndex]; //If they aren't at the end of the path, move to the next point
             }
         }
     }
@@ -54,7 +53,7 @@ public class EnemyMovement : MonoBehaviour
     private void FixedUpdate()
     {
         //Move the enemy towards the target
-        Vector2 direction = (target.position - transform.position).normalized;
+        Vector2 direction = (secondaryTarget.position - transform.position).normalized;
 
         rb.linearVelocity = direction * moveSpeed;
     }

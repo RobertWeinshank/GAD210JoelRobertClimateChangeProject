@@ -38,7 +38,7 @@ public class TurretSlowmo : MonoBehaviour
                 RaycastHit2D hit = hits[i];
 
                 EnemyMovement em = hit.transform.GetComponent<EnemyMovement>(); //Gets the enemy movement script of any enemy hit by the raycast
-                em.UpdateSpeed(0.5f);//Updates the speed once you get the script
+                em.UpdateSpeed(0.85f);//Updates the speed once you get the script
 
                 EnemyHealth eh = hits[i].transform.GetComponent<EnemyHealth>(); //Damages the enemy overtime
                 eh.TakeDamage(damage);
@@ -58,7 +58,8 @@ public class TurretSlowmo : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Handles.color = Color.cyan;
-        Handles.DrawWireDisc(transform.position, transform.forward, targetingRange);
+        //Handles.color = Color.cyan;
+        //Handles.DrawWireDisc(transform.position, transform.forward, targetingRange);
+        Gizmos.DrawWireSphere(transform.position, targetingRange);
     }
 }

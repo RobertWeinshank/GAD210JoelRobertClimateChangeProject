@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class EnemySpawner : MonoBehaviour
+public class SecondaryEnemySpawner : MonoBehaviour
 {
     [Header("References")]
     //Array for ALL TYPES of enemies to spawn in game  
     [SerializeField] private GameObject[] enemyPrefabs;
-    
+
     [Header("Attributes")]
     [SerializeField] private int baseEnemies = 8;
     [SerializeField] private float enemiesPerSecond = 0.5f;
@@ -17,60 +17,64 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float enemiesPerSecondCap = 15f;
 
     [Header("Events")]
-    public static UnityEvent onEnemyDestroy = new UnityEvent();
+    public static UnityEvent onSecondaryEnemyDestroy = new UnityEvent();
 
-    public int currentWave = 1;
+    public int currentWave = 5;
     private float timeSinceLastSpawn;
-    private int enemiesAlive;
-    private int enemiesLeftToSpawn;
+    private int secondaryEnemiesAlive;
+    private int secondaryEnemiesLeftToSpawn;
     private float eps;//Enemies per second
     private bool isSpawning = false;
 
     private void Awake()
     {
-        onEnemyDestroy.AddListener(EnemyDestroyed); //Anytime onEnemyDestroyed is called, call EnemyDestroyed
+        onSecondaryEnemyDestroy.AddListener(EnemyDestroyed); //Anytime onEnemyDestroyed is called, call EnemyDestroyed
     }
 
     private void Start()
     {
-        LevelManager.main.GetWave(currentWave);
-        StartCoroutine(StartWave());
+        //LevelManager.main.GetSecondWave(currentWave);
+        StartCoroutine(StartSecondWave());
     }
-    
+
     private void Update()
     {
-        //If we're not spawning, nothing will run in here
-        if (!isSpawning) return;
-        
-        timeSinceLastSpawn += Time.deltaTime; //start the spawn timer
-
-        if(timeSinceLastSpawn >= (1f / eps) && enemiesLeftToSpawn > 0) //if the spawn timer is greater than or equal to the enemies per second spawner and there are enemies left to spawn; spawn enemies and adjust spawn values
-        {         
-            SpawnEnemy();
-
-            enemiesLeftToSpawn--;
-            enemiesAlive++;
-
-            timeSinceLastSpawn = 0f;
-        }
-
-        if (enemiesAlive == 0 && enemiesLeftToSpawn == 0)
+        if (LevelManager.main.currentWave >= 3)
         {
-            EndWave();
+            //If we're not spawning, nothing will run in here
+            if (!isSpawning) return;
+
+            timeSinceLastSpawn += Time.deltaTime; //start the spawn timer
+
+            if (timeSinceLastSpawn >= (1f / eps) && secondaryEnemiesLeftToSpawn > 0) //if the spawn timer is greater than or equal to the enemies per second spawner and there are enemies left to spawn; spawn enemies and adjust spawn values
+            {
+                SpawnEnemy();
+
+                secondaryEnemiesLeftToSpawn--;
+                secondaryEnemiesAlive++;
+
+                timeSinceLastSpawn = 0f;
+            }
+
+            if (secondaryEnemiesAlive == 0 && secondaryEnemiesLeftToSpawn == 0)
+            {
+                EndWave();
+            }
         }
+        
     }
 
     private void EnemyDestroyed()
     {
-        enemiesAlive--;
+        secondaryEnemiesAlive--;
     }
 
-    private IEnumerator StartWave()
+    private IEnumerator StartSecondWave()
     {
-        Debug.Log("Start Primary Wave");
+        Debug.Log("Start Secondary Wave");
         yield return new WaitForSeconds(timeBetweenWaves);
         isSpawning = true;
-        enemiesLeftToSpawn = EnemiesPerWave();
+        secondaryEnemiesLeftToSpawn = EnemiesPerWave();
         eps = EnemiesPerSecond();
     }
 
@@ -79,16 +83,16 @@ public class EnemySpawner : MonoBehaviour
         isSpawning = false;
         timeSinceLastSpawn = 0f;
         currentWave++;
-        LevelManager.main.GetWave(currentWave);
-        StartCoroutine(StartWave());
+        LevelManager.main.GetSecondWave(currentWave);
+        StartCoroutine(StartSecondWave());
     }
 
     private void SpawnEnemy()
     {
-        //Debug.Log("Spawn Primary Enemy");
+        //Debug.Log("Spawn Secondary Enemy");
         int index = Random.Range(0, enemyPrefabs.Length);
         GameObject prefabToSpawn = enemyPrefabs[index]; //In the future, we can randomize which enemy spawns
-        Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity); //Spawn the prefab, at the starting point, at its current rotation
+        Instantiate(prefabToSpawn, LevelManager.main.secondaryStartPoint.position, Quaternion.identity); //Spawn the prefab, at the starting point, at its current rotation
     }
 
     private int EnemiesPerWave()
@@ -99,5 +103,5 @@ public class EnemySpawner : MonoBehaviour
     private float EnemiesPerSecond()
     {
         return Mathf.Clamp(enemiesPerSecond * Mathf.Pow(currentWave, difficultyScalingFactor), 0, enemiesPerSecondCap);
-    }    
+    }
 }

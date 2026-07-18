@@ -55,7 +55,8 @@ public class OilSlick : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Handles.color = Color.red;
-        Handles.DrawWireDisc(transform.position, transform.forward, targetingRange);
+        //Handles.color = Color.red;
+        //Handles.DrawWireDisc(transform.position, transform.forward, targetingRange);
+        Gizmos.DrawWireSphere(transform.position, targetingRange);
     }
 }

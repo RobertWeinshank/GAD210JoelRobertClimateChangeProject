@@ -109,6 +109,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   targetingRange: 2
-  attackSpeed: 2
-  damagePerSecond: 1
-  rainDamage: 1
+  attackSpeed: 1.5
+  freezeTime: 1
+  damage: 1
